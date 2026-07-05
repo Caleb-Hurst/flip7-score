@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a0f2e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Flip 7 Score</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Flip 7</h1>
+        <p class="subtitle">Score Tracker</p>
+        <p id="sync-status" class="sync-status" data-kind="ok">Connecting…</p>
+      </header>
+
+      <main id="player-list" class="player-list" aria-live="polite"></main>
+
+      <p id="empty-state" class="empty-state hidden">
+        Add players to start tracking scores.
+      </p>
+
+      <section class="add-player">
+        <form id="add-player-form" class="add-player-form">
+          <input
+            id="player-name-input"
+            type="text"
+            placeholder="Player name"
+            autocomplete="off"
+            autocapitalize="words"
+            enterkeyhint="done"
+            maxlength="24"
+          />
+          <button id="add-player-btn" type="submit" class="btn btn-primary">Add Player</button>
+        </form>
+      </section>
+
+      <p id="toast" class="toast hidden" role="status" aria-live="polite"></p>
+
+      <footer class="footer">
+        <button id="reset-scores-btn" type="button" class="btn btn-ghost" disabled>
+          Reset Scores
+        </button>
+        <button id="new-game-btn" type="button" class="btn btn-ghost" disabled>
+          New Game
+        </button>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
