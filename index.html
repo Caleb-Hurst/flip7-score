@@ -11,10 +11,43 @@
   <body>
     <div class="app">
       <header class="header">
+        <button id="sound-toggle" type="button" class="sound-toggle" aria-label="Mute sounds">🔊</button>
         <h1>Flip 7</h1>
         <p class="subtitle">Score Tracker</p>
         <p id="sync-status" class="sync-status" data-kind="ok">Connecting…</p>
       </header>
+
+      <section id="join-banner" class="join-banner hidden" aria-labelledby="join-heading">
+        <h2 id="join-heading" class="join-heading">Invite phones on your WiFi</h2>
+        <p class="join-hint">localhost only works on this computer. Share this link instead:</p>
+        <a id="join-url" class="join-url" href="#" target="_blank" rel="noopener noreferrer"></a>
+        <div class="join-actions">
+          <button id="share-join-btn" type="button" class="btn btn-primary">Share link</button>
+          <button id="copy-join-btn" type="button" class="btn btn-ghost">Copy link</button>
+        </div>
+      </section>
+
+      <div id="roast-banner" class="roast-banner hidden" role="status" aria-live="polite">
+        <p id="roast-text" class="roast-text"></p>
+        <div class="tone-control">
+          <label class="tone-label" for="tone-slider">Comment vibe</label>
+          <input
+            id="tone-slider"
+            class="tone-slider"
+            type="range"
+            min="0"
+            max="2"
+            step="1"
+            value="1"
+            aria-valuetext="Mid"
+          />
+          <div class="tone-marks" aria-hidden="true">
+            <span>Rude</span>
+            <span>Mid</span>
+            <span>Nice</span>
+          </div>
+        </div>
+      </div>
 
       <main id="player-list" class="player-list" aria-live="polite"></main>
 
@@ -43,12 +76,14 @@
         <button id="reset-scores-btn" type="button" class="btn btn-ghost" disabled>
           Reset Scores
         </button>
+        <button id="awards-btn" type="button" class="btn btn-ghost">🏆 Awards</button>
         <button id="new-game-btn" type="button" class="btn btn-ghost" disabled>
           New Game
         </button>
       </footer>
     </div>
 
+    <script src="roasts.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
