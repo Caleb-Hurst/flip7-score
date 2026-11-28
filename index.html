@@ -14,6 +14,7 @@
         <button id="sound-toggle" type="button" class="sound-toggle" aria-label="Mute sounds">🔊</button>
         <h1>Flip 7</h1>
         <p class="subtitle">Score Tracker</p>
+        <p id="who-am-i" class="who-am-i hidden"></p>
         <p id="sync-status" class="sync-status" data-kind="ok">Connecting…</p>
       </header>
 
@@ -25,6 +26,22 @@
           <button id="share-join-btn" type="button" class="btn btn-primary">Share link</button>
           <button id="copy-join-btn" type="button" class="btn btn-ghost">Copy link</button>
         </div>
+      </section>
+
+      <section id="final-banner" class="final-banner hidden" aria-live="polite">
+        <p id="final-text" class="final-text"></p>
+        <div class="final-actions">
+          <button id="final-btn" type="button" class="btn final-btn"></button>
+          <button id="play-again-btn" type="button" class="btn final-btn play-again-btn hidden">Play again</button>
+        </div>
+      </section>
+
+      <section id="bet-banner" class="bet-banner hidden" aria-live="polite">
+        <div class="bet-body">
+          <p id="bet-title" class="bet-title"></p>
+          <p id="bet-sub" class="bet-sub"></p>
+        </div>
+        <button id="bet-btn" type="button" class="btn bet-btn"></button>
       </section>
 
       <div id="roast-banner" class="roast-banner hidden" role="status" aria-live="polite">
@@ -60,7 +77,7 @@
           <input
             id="player-name-input"
             type="text"
-            placeholder="Player name"
+            placeholder="Add a player without a phone"
             autocomplete="off"
             autocapitalize="words"
             enterkeyhint="done"
@@ -75,6 +92,12 @@
       <footer class="footer">
         <button id="reset-scores-btn" type="button" class="btn btn-ghost" disabled>
           Reset Scores
+        </button>
+        <button id="reset-names-btn" type="button" class="btn btn-ghost hidden">
+          Reset Names
+        </button>
+        <button id="clear-unused-btn" type="button" class="btn btn-ghost hidden">
+          Clear Unused Names
         </button>
         <button id="awards-btn" type="button" class="btn btn-ghost">🏆 Awards</button>
         <button id="new-game-btn" type="button" class="btn btn-ghost" disabled>
